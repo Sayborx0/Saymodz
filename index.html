@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayModz Realtime Chat</title>
+    <style>
+        /* Mod menünün içine tam oturması için arka planı siyah yapıyoruz */
+        html, body {
+            background-color: #0A0A0A;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: monospace;
+        }
+        /* Yükleniyor yazısı */
+        #loading {
+            color: #4488FF;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 40%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading">[>] SOHBET ODASI YÜKLENİYOR...</div>
+
+    <script id="chatBroEmbedCode">
+        function ChatbroLoader(p,w,z,y,x){var a=document,b=window,c=b.ChatbroCache,d=a.createElement("script"),e=a.getElementsByTagName("script")[0];b.ChatbroAuth={encodedData:p};c&&c.nextTarget==w&&c.maxAge>Date.now()?(d.classList.add("chatbro-cache"),d.innerHTML=c.content):b.ChatbroCache=null;d.type="text/javascript";d.async=!0;d.src="https://www.chatbro.com/embed.js?"+z;e.parentNode.insertBefore(d,e);b.ChatbroCacheTimeout=setTimeout(function(){b.ChatbroCache=null},y);d.onload=function(){clearTimeout(b.ChatbroCacheTimeout);document.getElementById('loading').style.display='none'}}
+        
+        // Burası sohbet odasının ayarlarıdır (Karanlık tema ve boyut ayarları)
+        ChatbroLoader({},'','siteGuid=80b91e92-d37f-4318-ba20-222a0cebf13a',10000);
+    </script>
+
+</body>
+</html>
